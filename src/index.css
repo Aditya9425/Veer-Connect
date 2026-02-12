@@ -1,0 +1,811 @@
+/* ========================================
+   VEER CONNECT - PREMIUM INDIAN ARMY COMMAND
+   Official, Disciplined, High-End Military Aesthetic
+   ======================================== */
+
+:root {
+  /* PREMIUM MILITARY COLOR SYSTEM */
+  /* Primary Background: Deep charcoal with green undertone */
+  --bg-primary: #0f1412;
+
+  /* Secondary Background: Very dark olive-black gradients */
+  --bg-secondary: #141b18;
+  --bg-card: rgba(20, 27, 24, 0.6);
+  --bg-overlay: rgba(15, 20, 18, 0.85);
+
+  /* Accent Color: Muted Indian Army green (Spare use only) */
+  --accent-green: #4a5f38;
+  --accent-green-hover: #5a7344;
+  --accent-olive: #566b3f;
+
+  /* Text Colors */
+  --text-highlight: #e7e2d8;
+  /* Warm off-white / sand */
+  --text-primary: #d1d5db;
+  /* Muted gray-white */
+  --text-secondary: #8a9a90;
+  /* Muted greenish-gray */
+  --text-muted: #5c6b60;
+
+  /* Borders & Dividers */
+  --border-subtle: rgba(74, 95, 56, 0.2);
+  /* Low opacity green */
+  --border-accent: rgba(74, 95, 56, 0.4);
+
+  /* Typography */
+  --font-heading: 'Orbitron', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  /* Spacing */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 2rem;
+  --spacing-lg: 4rem;
+  --spacing-xl: 6rem;
+  --container-max: 1400px;
+
+  /* Transitions */
+  --transition-slow: 0.6s cubic-bezier(0.2, 0.8, 0.2, 1);
+  --transition-medium: 0.4s ease;
+}
+
+/* ========================================
+   RESET & BASE
+   ======================================== */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+  color: var(--text-highlight);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+  transition: var(--transition-medium);
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* ========================================
+   UTILITY CLASSES
+   ======================================== */
+
+.container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.text-highlight {
+  color: var(--text-highlight);
+}
+
+.text-accent {
+  color: var(--accent-green);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.uppercase-label {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  color: var(--accent-green);
+  font-weight: 600;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+/* ========================================
+   COMPONENTS
+   ======================================== */
+
+/* Buttons */
+.btn-command {
+  display: inline-block;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--accent-green);
+  color: var(--text-highlight);
+  font-family: var(--font-heading);
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
+  background: transparent;
+  transition: var(--transition-medium);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-command:hover {
+  background: rgba(74, 95, 56, 0.1);
+  border-color: var(--accent-green-hover);
+}
+
+.btn-command-filled {
+  background: var(--accent-green);
+  color: var(--text-highlight);
+  border: 1px solid var(--accent-green);
+}
+
+.btn-command-filled:hover {
+  background: var(--accent-green-hover);
+}
+
+/* Dividers */
+.divider-line {
+  height: 1px;
+  background: var(--border-subtle);
+  width: 100%;
+  margin: 2rem 0;
+}
+
+/* Input Fields */
+.input-command {
+  width: 100%;
+  padding: 1rem;
+  background: rgba(20, 27, 24, 0.3);
+  border: 1px solid var(--border-subtle);
+  color: var(--text-highlight);
+  font-family: var(--font-body);
+  transition: var(--transition-medium);
+}
+
+.input-command:focus {
+  outline: none;
+  border-color: var(--accent-green);
+  background: rgba(20, 27, 24, 0.5);
+}
+
+/* ========================================
+   NAVBAR
+   ======================================== */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  background: rgba(15, 20, 18, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border-subtle);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+
+.navbar-container {
+  width: 100%;
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--text-highlight);
+}
+
+.navbar-menu {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navbar-link {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+  position: relative;
+}
+
+.navbar-link:hover,
+.navbar-link.active {
+  color: var(--accent-green);
+}
+
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-green);
+  transition: width 0.3s ease;
+}
+
+.navbar-link:hover::after,
+.navbar-link.active::after {
+  width: 100%;
+}
+
+.mobile-menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text-highlight);
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* ========================================
+   HERO SECTION (CINEMATIC)
+   ======================================== */
+
+.hero-section {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://upload.wikimedia.org/wikipedia/commons/e/e4/Indian_Army_soldiers_during_Exercise_Yudh_Abhyas_2016.jpg');
+  background-size: cover;
+  background-position: center;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to right,
+      rgba(15, 20, 18, 0.95) 0%,
+      rgba(15, 20, 18, 0.8) 40%,
+      rgba(15, 20, 18, 0.4) 100%);
+  z-index: -1;
+}
+
+.hero-vignette {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle, transparent 60%, #0f1412 100%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  animation: fadeUpSlow 1s ease-out forwards;
+}
+
+.hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  color: var(--text-highlight);
+}
+
+.hero-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  margin-bottom: 2.5rem;
+  font-weight: 300;
+  max-width: 600px;
+}
+
+/* Floating Image Block (Right side) */
+.hero-floating-visual {
+  position: absolute;
+  right: 5%;
+  top: 50%;
+  transform: translateY(-50%) rotate(2deg);
+  width: 400px;
+  height: 500px;
+  background: url('https://images.unsplash.com/photo-1595183957262-1d701fa1c964?q=80&w=1000&auto=format&fit=crop');
+  background-size: cover;
+  background-position: center;
+  box-shadow: 20px 20px 40px rgba(0, 0, 0, 0.5);
+  opacity: 0.8;
+  filter: grayscale(40%) sepia(20%) hue-rotate(60deg) saturate(0.8);
+  border: 1px solid var(--border-subtle);
+  z-index: 0;
+  transition: transform 0.5s ease;
+}
+
+.hero-floating-visual:hover {
+  transform: translateY(-50%) rotate(0deg) scale(1.02);
+  opacity: 1;
+}
+
+/* Contour Lines Overlay (Subtle) */
+.contour-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAgMTAgTCA5MCA5MCIgc3Ryb2tlPSJyZ2JhKDc0LDk1LDU2LDAuMSkiIHN0cm9rZS13aWR0aD0iMSIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==');
+  opacity: 0.1;
+  pointer-events: none;
+  z-index: 0;
+}
+
+
+/* ========================================
+   MISSION SECTION
+   ======================================== */
+.mission-section {
+  padding: var(--spacing-xl) 0;
+  background-color: var(--bg-primary);
+}
+
+.mission-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 4rem;
+  align-items: start;
+}
+
+.mission-statement {
+  font-size: clamp(1.8rem, 3vw, 2.5rem);
+  font-family: var(--font-heading);
+  color: var(--text-highlight);
+  line-height: 1.4;
+}
+
+.mission-desc {
+  margin-top: 2rem;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  max-width: 800px;
+}
+
+/* ========================================
+   OPERATIONAL SCALE
+   ======================================== */
+.scale-section {
+  padding: var(--spacing-lg) 0;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-secondary);
+}
+
+.scale-grid {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat-item {
+  text-align: left;
+}
+
+.stat-number {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--text-highlight);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   CAPABILITIES
+   ======================================== */
+.capabilities-section {
+  padding: var(--spacing-xl) 0;
+}
+
+.capabilities-layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: center;
+}
+
+.capabilities-image {
+  height: 500px;
+  background: #1a221f;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid var(--border-subtle);
+}
+
+.capabilities-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(80%) contrast(1.2);
+}
+
+.capability-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.capability-item {
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 1.5rem;
+  transition: padding-left 0.3s ease;
+}
+
+.capability-item:hover {
+  padding-left: 1rem;
+  border-color: var(--accent-green);
+}
+
+.cap-title {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: var(--text-highlight);
+}
+
+.cap-desc {
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+}
+
+/* ========================================
+   CODE OF HONOR
+   ======================================== */
+.honor-section {
+  padding: var(--spacing-xl) 0;
+  text-align: center;
+  position: relative;
+  background: var(--bg-secondary);
+}
+
+.honor-content {
+  position: relative;
+  z-index: 2;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.honor-quote {
+  font-size: 1.8rem;
+  font-style: italic;
+  color: var(--text-highlight);
+  margin-bottom: 2rem;
+  font-family: var(--font-body);
+}
+
+.honor-insignia-bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 20rem;
+  opacity: 0.03;
+  color: var(--text-highlight);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ========================================
+   PROFILE / DASHBOARD
+   ======================================== */
+.profile-section {
+  padding: 4rem 0;
+  min-height: 100vh;
+}
+
+.profile-header {
+  margin-bottom: 4rem;
+  animation: fadeUpSlow 0.8s ease-out;
+}
+
+.profile-greeting {
+  font-size: 2.5rem;
+  color: var(--text-highlight);
+  margin-top: 0.5rem;
+}
+
+.dashboard-container {
+  max-width: var(--container-max);
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 4rem;
+}
+
+.profile-sidebar {
+  border-right: 1px solid var(--border-subtle);
+  padding-right: 2rem;
+}
+
+.sidebar-info {
+  margin-bottom: 3rem;
+  text-align: center;
+}
+
+.sidebar-photo-wrapper {
+  position: relative;
+  width: 150px;
+  height: 150px;
+  margin: 0 auto 1.5rem;
+  border: 1px solid var(--accent-green);
+  padding: 5px;
+}
+
+.sidebar-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 0;
+}
+
+.sidebar-name {
+  font-size: 1.5rem;
+  color: var(--text-highlight);
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.sidebar-role {
+  font-size: 0.85rem;
+  color: var(--accent-green);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  display: block;
+}
+
+.sidebar-bio {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  margin-top: 1rem;
+  line-height: 1.5;
+}
+
+.unit-info-list {
+  margin-top: 2rem;
+  text-align: left;
+}
+
+.unit-info-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.unit-label {
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.unit-value {
+  color: var(--text-highlight);
+}
+
+.dashboard-main {
+  /* Clean layout */
+}
+
+.dashboard-section {
+  margin-bottom: 4rem;
+}
+
+.section-subtitle {
+  font-size: 1.25rem;
+  color: var(--text-highlight);
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-subtle);
+  padding-bottom: 0.5rem;
+  display: inline-block;
+}
+
+/* Badges */
+.badges-grid {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.badge-item {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-subtle);
+  padding: 1rem;
+  text-align: center;
+  min-width: 100px;
+  transition: var(--transition-medium);
+}
+
+.badge-item:hover {
+  background: rgba(74, 95, 56, 0.1);
+  border-color: var(--accent-green);
+}
+
+.badge-icon {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+.badge-name {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+/* Progress */
+.progress-bar {
+  background: rgba(255, 255, 255, 0.1);
+  height: 4px;
+  width: 100%;
+  margin-top: 1rem;
+  position: relative;
+}
+
+.progress-fill {
+  background: var(--accent-green);
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Footer */
+.footer-section {
+  background: var(--bg-secondary);
+  border-top: 1px solid var(--border-subtle);
+  padding: 3rem 0;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+}
+
+.footer-links {
+  display: flex;
+  gap: 2rem;
+}
+
+.footer-link {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.footer-link:hover {
+  color: var(--accent-green);
+}
+
+.footer-copy {
+  color: var(--text-muted);
+  font-size: 0.8rem;
+}
+
+/* Animation utilities */
+@keyframes fadeUpSlow {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .mission-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .scale-grid {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .capabilities-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+    border-right: none;
+  }
+
+  .profile-sidebar {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px solid var(--border-subtle);
+    padding-bottom: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .navbar-menu {
+    display: none;
+  }
+
+  /* Simplified for now, JS toggle needed */
+  .mobile-menu-toggle {
+    display: block;
+  }
+
+  .navbar-menu.active {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    width: 100%;
+    background: var(--bg-primary);
+    padding: 2rem;
+    border-bottom: 1px solid var(--border-subtle);
+  }
+}
